@@ -16,21 +16,21 @@ import java.util.TreeMap;
  * emissions for a landing/take-off(LTO) cycle for the most common aircraft types.
  *
  */
-class Constants {
+public class Constants {
 
-    static final SortedMap<Integer, Integer> mediumWTCDescendAltitudeToNoiseDb = new TreeMap<Integer, Integer>() {{
+    public static final SortedMap<Integer, Integer> mediumWTCDescendAltitudeToNoiseDb = new TreeMap<Integer, Integer>() {{
         put(3000, 63);
         put(2000, 71);
         put(1000, 86);
         put(500, 93);
     }};
-    static final SortedMap<Integer, Integer> heavyWTCDescendAltitudeToNoiseDb = new TreeMap<Integer, Integer>() {{
+    public static final SortedMap<Integer, Integer> heavyWTCDescendAltitudeToNoiseDb = new TreeMap<Integer, Integer>() {{
         put(3000, 70);
         put(2000, 79);
         put(1000, 94);
         put(500, 100);
     }};
-    static final SortedMap<Integer, Integer> heavyWTCClimbingAltitudeToNoiseDb = new TreeMap<Integer, Integer>() {{
+    public static final SortedMap<Integer, Integer> heavyWTCClimbingAltitudeToNoiseDb = new TreeMap<Integer, Integer>() {{
         put(500, 96);
         put(1000, 92);
         put(1500, 86);
@@ -38,7 +38,7 @@ class Constants {
         put(3000, 72);
     }};
 
-    static final SortedMap<Integer, Integer> mediumWTCClimbingAltitudeToNoiseDb = new TreeMap<Integer, Integer>() {{
+    public static final SortedMap<Integer, Integer> mediumWTCClimbingAltitudeToNoiseDb = new TreeMap<Integer, Integer>() {{
         put(500, 83);
         put(1000, 81);
         put(1500, 74);
@@ -47,7 +47,7 @@ class Constants {
     }};
 
 
-    static final Map<String, Double> typeToLTOCycyleC02Emission = new HashMap<String, Double>() {{
+    public static final Map<String, Double> typeToLTOCycyleC02Emission = new HashMap<String, Double>() {{
         put("B738", 2625d);
         put("A320", 2750.7d);
         put("A321", 2560d);

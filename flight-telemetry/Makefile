@@ -17,7 +17,10 @@ prep :
 pull :
 	docker-compose pull
 
-up : prep pull
+#up : prep pull
+#	docker-compose up -d
+
+up :
 	docker-compose up -d
 
 down :
@@ -28,3 +31,12 @@ shell :
 
 tail :
 	docker logs -f $(CONTAINER)
+
+clean :
+	rm -rf data/whisper; \
+	rm -rf data/elasticsearch; \
+	rm -rf data/grafana; \
+	rm -rf log/graphite; \
+	rm -rf log/graphite/webapp; \
+	rm -rf log/elasticsearch; \
+	rm -rf log/supervisor;
