@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <project xmlns="http://maven.apache.org/POM/4.0.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+      <groupId>com.hazelcast.jet.demos</groupId>
+      <artifactId>hazelcast-jet-demos</artifactId>
+      <version>0.6</version>
+    </parent>
+
+    <name>Word Count with Distributed java 8 streams Demo</name>
+    <artifactId>word-count-distributed-java-streams</artifactId>
+
+    <build>
+      <plugins>
+        <plugin>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>3.1.0</version>
+          <configuration>
+            <descriptorRefs>
+              <descriptorRef>jar-with-dependencies</descriptorRef>
+            </descriptorRefs>
+            <archive>
+              <manifest>
+                <mainClass>com.hazelcast.jet.demo.FlightTelemetry</mainClass>
+              </manifest>
+            </archive>
+          </configuration>
+          <executions>
+            <execution>
+              <id>make-assembly</id>
+              <phase>package</phase>
+              <goals>
+                <goal>single</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <configuration>
+            <mainClass>com.hazelcast.jet.demos.wordcount.WordCountApp</mainClass>
+          </configuration>
+        </plugin>
+      </plugins>
+    </build>
+
+  </project>

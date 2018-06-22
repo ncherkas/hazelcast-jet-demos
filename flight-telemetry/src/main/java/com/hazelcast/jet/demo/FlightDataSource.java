@@ -8,6 +8,7 @@ import com.hazelcast.com.eclipsesource.json.JsonValue;
 import com.hazelcast.jet.Traverser;
 import com.hazelcast.jet.core.AbstractProcessor;
 import com.hazelcast.jet.core.ProcessorMetaSupplier;
+import com.hazelcast.jet.demo.types.Aircraft;
 import com.hazelcast.jet.pipeline.StreamSource;
 import com.hazelcast.util.ExceptionUtil;
 import java.io.BufferedReader;
@@ -122,7 +123,7 @@ public class FlightDataSource extends AbstractProcessor {
         return aircraft;
     }
 
-    public static ProcessorMetaSupplier streamAircraftP(String url, long intervalMillis) {
+    private static ProcessorMetaSupplier streamAircraftP(String url, long intervalMillis) {
         return forceTotalParallelismOne(of(() -> new FlightDataSource(url, intervalMillis)));
     }
 
